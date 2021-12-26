@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>Workflowy Replica - theVedanta</title>
+        <link
+            rel="stylesheet"
+            href="https://fonts.googleapis.com/css?family=Lato:100,200,300,400,500,600,700,800,900"
+        />
+        <link rel="stylesheet" href="./styles/style.css" />
+    </head>
+    <body>
+        <main class="container">
+            <div class="btns">
+                <button id="add" onclick="addDoc(event)">+</button>
+                <button id="back" style="display: none" onclick="back()">
+                    Back
+                </button>
+            </div>
+            <div class="documents parent-documents">
+                <div class="document">
+                    <!-- <div class="collapse-arrow">></div> -->
+                    <div class="title-dot">
+                        <div class="actual-dot"></div>
+                    </div>
+                    <input type="text" value="New Document" class="title" />
+                </div>
+            </div>
+        </main>
+
+        <script src="./js/main.js"></script>
+    </body>
+</html>

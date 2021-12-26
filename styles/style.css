@@ -1,0 +1,149 @@
+* {
+    border: none;
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    font-family: Lato;
+    outline: 0;
+}
+body {
+    background: rgb(231, 232, 235);
+}
+.container {
+    padding: 12vh 15vw;
+}
+button {
+    cursor: pointer;
+}
+.overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 150%;
+    height: 100%;
+    background: rgb(231, 232, 235);
+    z-index: 10;
+    display: none;
+    pointer-events: none;
+}
+.btns {
+    position: fixed;
+    padding-top: 8vh;
+    padding-left: 10vw;
+    top: 0;
+    left: 0;
+    z-index: 30;
+}
+/* ----------------------------------------------------------------------------------------------------------------------------- */
+.documents {
+    display: flex;
+    flex-direction: column;
+    margin-bottom: 3.6vh;
+    margin-top: 2vh;
+    margin-left: 2vw;
+    z-index: 1;
+}
+.parent-documents {
+    position: relative;
+}
+#add {
+    padding: 1vh 1vw;
+    border-radius: 8px;
+    font-size: 1vw;
+    background: #086ec7;
+    color: #fff;
+    box-shadow: 0 3px 3px rgba(47, 47, 48, 0.144);
+}
+#back {
+    padding: 1vh 1vw;
+    border-radius: 8px;
+    font-size: 1vw;
+    background: rgb(207, 53, 14);
+    color: #fff;
+    box-shadow: 0 3px 3px rgba(47, 47, 48, 0.144);
+    margin-bottom: 3vh;
+}
+/* ----------------------------------------------------------------------------------------------------------------------------- */
+.document {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    position: relative;
+    margin-bottom: 1vh;
+}
+.title {
+    font-size: 1.2vw;
+    padding: 0.5vw 0;
+    font-weight: 500;
+    margin-left: 2.3vw;
+    position: relative;
+    transition: all 0.3s;
+    background: transparent;
+    width: 60%;
+    border-bottom: 2px solid #000;
+}
+.title-dot {
+    display: inline-block;
+    width: 2.3vw;
+    height: 2.3vw;
+    position: absolute;
+    top: 0;
+    cursor: pointer;
+}
+.actual-dot {
+    position: absolute;
+    width: 1em;
+    height: 1em;
+    top: 50%;
+    left: 50%;
+    background: #000;
+    border-radius: 50%;
+    transform: translate(-50%, -50%);
+}
+.actual-dot:after {
+    content: "";
+    position: absolute;
+    top: 25%;
+    left: 25%;
+    width: 100%;
+    height: 100%;
+    background: rgba(78, 78, 78, 0.4);
+    border-radius: 50%;
+    transform: translate(-25%, -25%);
+    transition: all 0.1s;
+}
+.title-dot:hover .actual-dot:after {
+    width: 200%;
+    height: 200%;
+    top: 0%;
+    left: 0%;
+}
+.collapse-arrow {
+    position: absolute;
+    top: 50%;
+    left: -10px;
+    transform: translate(-50%, -50%);
+    cursor: pointer;
+    font-size: 1.6vw;
+    font-weight: 800;
+}
+
+.active-doc {
+    position: fixed;
+    top: 8vh;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    padding: 8vh 15vw;
+    z-index: 20;
+    background: rgb(231, 232, 235);
+}
+.active-doc > .title {
+    font-size: 2vw;
+    font-weight: 800;
+    margin-left: 0;
+}
+.active-doc > .title-dot {
+    opacity: 0;
+    width: 0;
+}
