@@ -133,7 +133,7 @@ button {
     top: 8vh;
     left: 0;
     width: 100vw;
-    height: 100vh;
+    min-height: 100vh;
     padding: 8vh 15vw;
     z-index: 20;
     background: rgb(231, 232, 235);

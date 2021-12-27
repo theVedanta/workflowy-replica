@@ -4,7 +4,6 @@ const addBtn = document.querySelector("#add");
 const backBtn = document.querySelector("#back");
 
 const RegOpenForDocs = (paramDot) => {
-    // const docs = document.querySelectorAll(".document");
     let dots;
 
     if (paramDot) {
@@ -14,50 +13,21 @@ const RegOpenForDocs = (paramDot) => {
     }
 
     for (let dot of dots) {
-        dot.addEventListener("click", (e) => {
+        dot.addEventListener("click", () => {
             // RESET
             const activeDoc = document.querySelector(".active-doc");
             if (activeDoc) {
                 activeDoc.classList.remove("active-doc");
             }
 
-            let doc = dot.parentElement;
-            doc.classList.add("active-doc");
-
-            // clear other documents
-            // for (let sibling of doc.parentElement.children) {
-            //     sibling.style.display = "none";
-            // }
-
-            // get all the documents classes from the parent, compare to current and make others disappear
-
-            if (doc.children[2]) {
-                for (let subDoc of doc.children[2].children) {
-                    subDoc.style.display = "flex";
-                }
-            }
-
-            // dot
-            // title
-            // doc.children[1].classList.add("title-active");
-
-            // back btn
+            dot.parentElement.classList.add("active-doc");
             backBtn.style.display = "inline-block";
         });
     }
 };
 
 const back = () => {
-    // bring back docs
-    const docs = document.querySelectorAll(".document");
-    for (let doc of docs) {
-        doc.style.display = "flex";
-    }
-
-    // title reset
     document.querySelector(".active-doc").classList.remove("active-doc");
-
-    // back btn
     backBtn.style.display = "none";
 };
 
@@ -83,9 +53,6 @@ const addDoc = (e) => {
     // insert in doc
     doc.appendChild(titleDot);
     doc.appendChild(title);
-
-    // insert in overall docs
-    // document.querySelector(".documents").appendChild(doc);
 
     const docActive = document.querySelector(".active-doc");
     if (!docActive) {
