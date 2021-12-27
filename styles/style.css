@@ -70,6 +70,7 @@ button {
     width: 100%;
     position: relative;
     margin-bottom: 1vh;
+    cursor: grabbing;
 }
 .title {
     font-size: 1.2vw;
@@ -146,4 +147,8 @@ button {
 .active-doc > .title-dot {
     opacity: 0;
     width: 0;
+}
+
+.dragging {
+    opacity: 0.2;
 }
